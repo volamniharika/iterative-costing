@@ -1,7 +1,7 @@
 package com.example.yyyyy.service;
 
-import com.example.yyyyy.Entity.Department;
-import com.example.yyyyy.Repository.DepartmentRepository;
+import com.example.yyyyy.entity.Department;
+import com.example.yyyyy.repository.DepartmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,13 +28,13 @@ public class departmentService {
 
    public List<Department> getDepartments(long bnum,long dnum)
     {
-        System.out.println("in service");
+        //System.out.println("in service");
         return dp.findDepartments(bnum,dnum);
     }
-    public Department getDepartment(long num)
-    {
-
-        return dp.findDept(num);
+    public Department getDepartment(long bnum,long dnum,long denum)
+        {
+            System.out.println("in service");
+            return dp.findDept(bnum,dnum,denum);
     }
 
 

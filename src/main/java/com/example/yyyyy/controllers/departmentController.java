@@ -1,13 +1,12 @@
 package com.example.yyyyy.controllers;
 
-import com.example.yyyyy.Entity.Department;
+import com.example.yyyyy.entity.Department;
 import com.example.yyyyy.service.departmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 public class departmentController {
@@ -39,9 +38,10 @@ public class departmentController {
     }
     @RequestMapping(value="/brand/{brandnum}/divison/{divisonnum}/department/{d}",method= RequestMethod.GET)
     public @ResponseBody
-    Department getDepartment(@PathVariable(value="d")long dnum, @PathVariable(value="divisonnum")long divisonnum){
-
-        return ds.getDepartment(dnum);
+    Department getDepartment(@PathVariable(value="brandnum")long bnum, @PathVariable(value="divisonnum")long dnum,@PathVariable(value="d")long denum)
+    {
+        System.out.println("in controller");
+        return ds.getDepartment(bnum,dnum,denum);
 
 
 

@@ -1,7 +1,7 @@
 package com.example.yyyyy.service;
 
-import com.example.yyyyy.Entity.Divison;
-import com.example.yyyyy.Repository.DivisonRepository;
+import com.example.yyyyy.entity.Divison;
+import com.example.yyyyy.repository.DivisonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

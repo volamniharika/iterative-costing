@@ -1,8 +1,7 @@
 package com.example.yyyyy.service;
 
-import com.example.yyyyy.Entity.Classes;
-import com.example.yyyyy.Entity.Department;
-import com.example.yyyyy.Repository.ClassRepository;
+import com.example.yyyyy.entity.Classes;
+import com.example.yyyyy.repository.ClassRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,9 +24,16 @@ public class classService {
     }
 
 
-//    public List<Classes> getClasses(long brandnum,long divnum,long deptnum) {
-//
-//        return cr.getClasses(brandnum,divnum,deptnum);
-//     }
+    public List<Classes> getClasses(long brandnum,long divnum,long deptnum) {
 
+        System.out.println("in servive");
+
+        return cr.getClasses(brandnum,divnum,deptnum);
+     }
+
+
+    public Classes getClassDesc(long brandnum, long divisonnum, long departmentnum, long classnum) {
+
+        return cr.getClassDesc(brandnum,divisonnum,departmentnum,classnum);
+    }
 }

@@ -1,24 +1,21 @@
-package com.example.yyyyy.Entity;
+package com.example.yyyyy.entity;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name="subclass")
 
-public class subClass {
+@Entity
+@Table(name="Classes")
+
+public class Classes {
+
 
     @Id
     @Column(name="id")
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq3")
-    @SequenceGenerator(name="seq3", initialValue=501, allocationSize=1,sequenceName ="subclass_sequence" )
+    @SequenceGenerator(name="seq3", initialValue=301, allocationSize=1,sequenceName ="class_sequence" )
     long id;
-
-    @Column(name="subClassDesc")
-    private String subClassDesc;
-
-
-    @Column(name="actualAuc")
-    private float actualAuc;
+    @Column(name="classDesc")
+    private String classDesc;
 
     public long getId() {
         return id;
@@ -28,12 +25,12 @@ public class subClass {
         this.id = id;
     }
 
-    public String getSubClassDesc() {
-        return subClassDesc;
+    public String getClassDesc() {
+        return classDesc;
     }
 
-    public void setSubClassDesc(String subClassDesc) {
-        this.subClassDesc = subClassDesc;
+    public void setClassDesc(String classDesc) {
+        this.classDesc = classDesc;
     }
 
     public float getActualAuc() {
@@ -52,20 +49,24 @@ public class subClass {
         this.targetAuc = targetAuc;
     }
 
-    public Classes getClasses() {
-        return classes;
+    public Department getDepartment() {
+        return department;
     }
 
-    public void setClasses(Classes classes) {
-        this.classes = classes;
+    public void setDepartment(Department department) {
+        this.department = department;
     }
+
+    @Column(name="actualAuc")
+    private float actualAuc;
 
     @Column(name="targetAuc")
     private float targetAuc;
 
     @ManyToOne
-    @JoinColumn(name="classes_id")
-    private Classes classes;
+    @JoinColumn(name="department_id")
+    private Department department;
+
 
 
 }

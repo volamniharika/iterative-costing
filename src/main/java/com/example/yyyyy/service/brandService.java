@@ -1,10 +1,8 @@
 package com.example.yyyyy.service;
 
 
-import com.example.yyyyy.Entity.Brand;
-import com.example.yyyyy.Entity.Divison;
-import com.example.yyyyy.Repository.BrandRepository;
-import com.example.yyyyy.Repository.DivisonRepository;
+import com.example.yyyyy.entity.Brand;
+import com.example.yyyyy.repository.BrandRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -38,9 +36,8 @@ public class brandService {
 	}
 
 
+    public void updateBrand(long old, long newvalue) {
 
-
-
-
-
+		br.updateBrand(old,newvalue);
+    }
 }

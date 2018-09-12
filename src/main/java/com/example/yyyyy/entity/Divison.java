@@ -1,38 +1,39 @@
-package com.example.yyyyy.Entity;
+package com.example.yyyyy.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.engine.internal.Cascade;
 
 import javax.persistence.*;
-import java.util.List;
 
 
 @Entity
-@Table(name="Divison")
+@Table(name = "Divison")
 @Data
 @Getter
 @Setter
+
+//Opt + Command + L => Format
 
 public class Divison {
 
 
     @Id
-    @Column(name="id")
-    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq1")
-    @SequenceGenerator(name="seq1", initialValue=101, allocationSize=1,sequenceName ="divison_sequence" )
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq1")
+    @SequenceGenerator(name = "seq1", initialValue = 101, allocationSize = 1, sequenceName = "divison_sequence")
     long id;
-    @Column(name="divisonDesc")
+    @JsonProperty("description")
+    @Column(name = "divisonDesc")
     String divisonDesc;
-    @Column(name="actualAuc")
+    @Column(name = "actualAuc")
     float actualAuc;
-    @Column(name="targetAuc")
+    @Column(name = "targetAuc")
     float targetAuc;
     @ManyToOne
-    @JoinColumn(name="brand_id")
+    @JoinColumn(name = "brand_id")
     private Brand brand;
-
 
 
     public long getId() {
@@ -62,7 +63,6 @@ public class Divison {
     public float getTargetAuc() {
         return targetAuc;
     }
-
 
 
     public void setTargetAuc(float targetAuc) {

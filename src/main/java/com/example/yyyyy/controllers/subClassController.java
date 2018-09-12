@@ -1,15 +1,10 @@
 package com.example.yyyyy.controllers;
 
-import com.example.yyyyy.Entity.Classes;
-import com.example.yyyyy.Entity.subClass;
-import com.example.yyyyy.Repository.SubClassRepository;
+import com.example.yyyyy.entity.subClass;
 import com.example.yyyyy.service.subClassService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -33,5 +28,19 @@ public class subClassController {
         sr.addSubClasses(b);
 
     }
+    @RequestMapping(value="/brand/{brandnum}/divison/{divisonnum}/department/{departmentnum}/class/{classnum}/subclasses",method= RequestMethod.GET)
+    public @ResponseBody List<subClass> getSubClasses(@PathVariable(value="brandnum")long bnum,@PathVariable(value="divisonnum")long dnum,@PathVariable(value="departmentnum")long denum,@PathVariable(value="classnum") long cnum){
+
+        return sr.getSubClasses(bnum,dnum,denum,cnum);
+
+    }
+    @RequestMapping(value="/brand/{brandnum}/divison/{divisonnum}/department/{departmentnum}/class/{classnum}/subclass/{subclassnum}",method= RequestMethod.GET)
+    public @ResponseBody subClass getSubClasses(@PathVariable(value="brandnum")long bnum,@PathVariable(value="divisonnum")long dnum,@PathVariable(value="departmentnum")long denum,@PathVariable(value="classnum") long cnum,@PathVariable(value="subclassnum")long subclassnum){
+
+        return sr.getSubClassDesc(bnum,dnum,denum,cnum,subclassnum);
+
+    }
+
+
 
 }

@@ -1,8 +1,6 @@
 package com.example.yyyyy.controllers;
 
-import com.example.yyyyy.Entity.Classes;
-import com.example.yyyyy.Entity.Department;
-import com.example.yyyyy.Entity.Divison;
+import com.example.yyyyy.entity.Classes;
 import com.example.yyyyy.service.classService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,12 +26,21 @@ public class classController {
         cs.addClasses(b);
 
     }
-//    @RequestMapping(value="/brand/{brandnum}/divison/{divisonnum}/department/{departmentnum}/classes",method= RequestMethod.GET)
-//    public @ResponseBody List<Classes> getClasses(@PathVariable(value="departmentnnum")long deptnum,@PathVariable(value="brandnum")long brandnum,@PathVariable(value="divisonnum")long divisonum){
-//
-//        return cs.getClasses(brandnum,divisonum,deptnum);
-//
-//   }
+    @RequestMapping(value="/brand/{brandnum}/divison/{divisonnum}/department/{departmentnum}/classes",method= RequestMethod.GET)
+    public @ResponseBody List<Classes> getClasses(@PathVariable(value="brandnum")long brandnum,@PathVariable(value="divisonnum")long divisonnum,@PathVariable(value="departmentnum")long departmentnum){
+
+
+        return cs.getClasses(brandnum,divisonnum,departmentnum);
+
+   }
+    @RequestMapping(value="/brand/{brandnum}/divison/{divisonnum}/department/{departmentnum}/class/{classnum}",method= RequestMethod.GET)
+    public @ResponseBody Classes getClass(@PathVariable(value="brandnum")long brandnum,@PathVariable(value="divisonnum")long divisonnum,@PathVariable(value="departmentnum")long departmentnum,@PathVariable(value="classnum")long classnum){
+
+
+        return cs.getClassDesc(brandnum,divisonnum,departmentnum,classnum);
+
+    }
+
 
 
 

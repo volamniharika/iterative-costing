@@ -1,7 +1,6 @@
-package com.example.yyyyy.Entity;
+package com.example.yyyyy.entity;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name="Department")
@@ -32,17 +31,6 @@ public class Department {
     public void setId(long id) {
         this.id = id;
     }
-//    @OneToMany(mappedBy ="department")
-//    List<Classes> classesList;
-
-
-//    public List<Classes> getClassesList() {
-//        return classesList;
-//    }
-//
-//    public void setClassesList(List<Classes> classesList) {
-//        this.classesList = classesList;
-//    }
 
 
 

@@ -1,15 +1,11 @@
-package com.example.yyyyy.Repository;
+package com.example.yyyyy.repository;
 
-import com.example.yyyyy.Entity.Brand;
-import com.example.yyyyy.Entity.Divison;
+import com.example.yyyyy.entity.Divison;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
-import java.util.stream.Collectors;
-
-import static com.sun.tools.doclint.Entity.and;
 
 public interface DivisonRepository extends JpaRepository<Divison,Long> {
 

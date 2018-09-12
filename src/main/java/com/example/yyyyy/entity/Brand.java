@@ -1,36 +1,34 @@
-package com.example.yyyyy.Entity;
+package com.example.yyyyy.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
-@Table(name="Brand")
+@Table(name = "Brand")
 @Data
 @Getter
 @Setter
 public class Brand {
 
 
-
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-   @Column(name="id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     long id;
 
-    @Column(name="brandDesc")
-   private String brandDesc;
+    @Column(name = "brandDesc")
+    @JsonProperty("description")
+    private String brandDesc;
 
-
-    @Column(name="actualAuc")
+    @Column(name = "actualAuc")
     private float actualAuc;
 
-    @Column(name="targetAuc")
+    @Column(name = "targetAuc")
     private float targetAuc;
-
 
 
     public long getId() {
@@ -64,7 +62,6 @@ public class Brand {
     public void setTargetAuc(float targetAuc) {
         this.targetAuc = targetAuc;
     }
-
 
 
 }

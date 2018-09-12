@@ -1,6 +1,6 @@
 package com.example.yyyyy.controllers;
 
-import com.example.yyyyy.Entity.Brand;
+import com.example.yyyyy.entity.Brand;
 import com.example.yyyyy.service.brandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,6 +30,15 @@ public class brandController {
 		is.addBrands(b);
 
 	}
+	@RequestMapping(value="/updatebrand/{old}/{newvalue}",method= RequestMethod.POST)
+	public @ResponseBody void updateBrand(@PathVariable("old")long old,@PathVariable("newvalue")long newvalue){
+
+
+		System.out.println(old+" "+newvalue);
+		is.updateBrand(old,newvalue);
+
+	}
+
 
 
 	@RequestMapping(value="/brands",method= RequestMethod.GET)
